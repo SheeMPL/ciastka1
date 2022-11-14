@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookieClicker</title>
+</head>
+<body>
+   <h1>CookieClicker</h1>
+    <h2 id="wynik">0 </h2>
+    <img src="cookie.jpg" alt="ciastko" width="300px" onclick="ciastko()">
+    <br>
+    <P id = "cena_baby">10</P>
+    <img src="BABCIA.jpg" alt="babcia" width="100px" onclick="babcia()">
+    <br>
+    <p id = "ile_bab"> 1 </p>
+
+
+    <script>
+        wynik = 0;
+        ile_bab = 1;
+        cena_baby = 10;
+        setInterval(czas , 500);
+        function ciastko() {
+            wynik = wynik + ile_bab;
+            document.getElementById("wynik").innerText = wynik;
+        }
+
+        function babcia(){
+            if (wynik >= cena_baby){
+                ile_bab++;
+                wynik = wynik - cena_baby;
+                cena_baby = cena_baby + 10;
+                document.getElementById("ile_bab").innerText = ile_bab;
+                document.getElementById("wynik").innerText = wynik;
+                document.getElementById("cena_baby").innerText = cena_baby;
+            }
+        }
+
+        function czas() {
+            wynik = wynik + ile_bab;
+            document.getElementById("wynik").innerText = wynik;
+        }
+            
+
+
+    </script>
+
+
+</body>
+</html>
